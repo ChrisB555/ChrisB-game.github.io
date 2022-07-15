@@ -95,15 +95,12 @@ document.querySelector("#btn3").onclick = function playOne () {
     //modal functions
 function modalWin () {
     document.getElementById("modalWin").style.display = "block";
-    //document.getElementById("text1").innerHTML =  `${playerSelection()} beats ${computerSelection()}`;
 }
 function modalDraw () {
     document.getElementById("modalDraw").style.display = "block";
-   //document.getElementById("text2").innerHTML =  `${playerSelection()} is the same as ${computerSelection()}`;
 }
 function modalLose () {
     document.getElementById("modalLose").style.display = "block";
-    //document.getElementById("text3").innerHTML =  `${computerSelection()} beats ${playerSelection()}`;
 }
 document.getElementById("close1").onclick = function closeModal () {
     document.getElementById("modalWin").style.display = "none";
@@ -115,12 +112,13 @@ document.getElementById("close3").onclick = function closeModal () {
     document.getElementById("modalLose").style.display = "none";
 }
 
-    //Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock" ++
-    //make your function case insensitive (so users can input rock, ROCK, RocK or any other variation) ++
+/*Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters 
+- the playerSelection and computerSelection - and then return a string that declares the winner of the round like so:
+ "You Lose! Paper beats Rock"  */
    
-    function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
        
-      if (playerSelection.toLowerCase() === "rock") {
+    if (playerSelection.toLowerCase() === "rock") {
         if (computerSelection === "rock") {
           console.log( "It's a draw!  You both chose Rock!" );
           modalDraw();
@@ -138,7 +136,7 @@ document.getElementById("close3").onclick = function closeModal () {
             }
           }
         }
-      }
+    }
       if (playerSelection.toLowerCase() === "paper") {
         if (computerSelection === "paper") {
           console.log( "It's a draw!  You both chose Paper!" );
@@ -184,6 +182,7 @@ playRound(playerSelection(), computerSelection());
 
 
 //Game with five tryies
+
 document.querySelector("#btn4").onclick = function playFive () {
 
     let myOptions = ["rock", "paper", "scissors"];
@@ -194,18 +193,15 @@ document.querySelector("#btn4").onclick = function playFive () {
       return myOptions[ Math.floor (Math.random() * myOptions.length)];
     };
 
-      //modal functions
+ //modal functions
 function modalWin () {
     document.getElementById("modalWin").style.display = "block";
-    //document.getElementById("text1").innerHTML =  `${playerSelection()} beats ${computerSelection()}`;
 }
 function modalDraw () {
     document.getElementById("modalDraw").style.display = "block";
-   //document.getElementById("text2").innerHTML =  `${playerSelection()} is the same as ${computerSelection()}`;
 }
 function modalLose () {
     document.getElementById("modalLose").style.display = "block";
-    //document.getElementById("text3").innerHTML =  `${computerSelection()} beats ${playerSelection()}`;
 }
 document.getElementById("close1").onclick = function closeModal () {
     document.getElementById("modalWin").style.display = "none";
@@ -217,7 +213,8 @@ document.getElementById("close3").onclick = function closeModal () {
     document.getElementById("modalLose").style.display = "none";
 }
 
-    function playRound(playerSelection, computerSelection) {
+//play function
+ function playRound(playerSelection, computerSelection) {
        
         if (playerSelection.toLowerCase() === "rock") {
           if (computerSelection === "rock") {
@@ -269,35 +266,32 @@ document.getElementById("close3").onclick = function closeModal () {
         }
       }
 
-    //Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end. ++
-    //At this point you should still just be using console.log() to display the results of each round and the winner at the end.
+/*Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
+At this point you should still just be using console.log() to display the results of each round and the winner at the end.*/
    function game() {
     
-      let playerWins = 0;
-      let computerWins = 0;
+      let playerWin = 0;
+      let computerWin = 0;
       let playRoundReturn = true;
     
       for (let i = 1; i <= 5 ; i++) {
         playRoundReturn = playRound(playerSelection(), computerSelection());
         if ( playRoundReturn === true ) {
-          playerWins++;
+          playerWin++;
         } else {
           if ( playRoundReturn === false ) {
-            computerWins++;
+            computerWin++;
           }
         }
      }
       
-      if ( playerWins < computerWins ) {
+      if( playerWin < computerWin) {
         console.log( "You lost! ");
-        modalLose();
+        modalLose()
       } else {
-        if ( playerWins > computerWins) {
-          console.log( "You win! ");
-          modalWin();
-        }
-      }
-    }
+        console.log( "You win! ")};
+        modalWin();
+      }        
 
     game();
     }
