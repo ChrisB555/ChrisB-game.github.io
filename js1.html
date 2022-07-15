@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+crossorigin="anonymous">
+    <link rel="stylesheet" href="js1.css">
+    <title>JS</title>
+</head>
+<body>
+        <div>
+            <h1>THIS IS THE JS PAGE: </h1>
+        </div>
+        <h4>Please open the console to see the results (F12)</h4>
+        <div class="btn">
+            <button id="btn1" onclick="firstAssignment">First Assignment</button>
+            <button id="btn2" onclick="secondAssignment">Second Assignment</button>
+        </div>
+        <h2> NOW LET'S PLAY ROCK, PAPER, SCISSORS !!!</h2>
+        <div class="btn">
+            <button id="btn3" onclick="playOne">Play One Round</button>
+            <button id="btn4" onclick="playFive">Play Five Rounds</button>
+        </div>
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" id="modalWin">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">YOU  WIN !!!</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close1"></button>
+        </div>
+        <div class="modal-body" >
+            <p id="text1"></p>
+        <img src="win.png" alt="win" class="img">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" tabindex="-1" id="modalDraw">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">IT'S A TIE !!!</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close2"></button>
+        </div>
+        <div class="modal-body">
+            <p id="text2"></p>
+        <img src="tie.png" alt="tie"class="img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" id="modalLose">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">YOU  LOST !!!</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close3"></button>
+        </div>
+        <div class="modal-body" >
+            <p id="text3"></p>
+            <img src="lost.jfif" alt="lost"class="img">
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--scripts-->       
+<script src="script.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+crossorigin="anonymous"></script>
+</body>
+</html>
