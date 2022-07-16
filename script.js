@@ -8,8 +8,7 @@ function findSquareDiagonal (side) {
     return Math.SQRT2 * side;
 };
 
-console.log(" The square diagonal is: ")
-console.log(findSquareDiagonal(9));
+console.log(" The square diagonal is: " , findSquareDiagonal(9));
 
 /*Write a JavaScript program to find the area of a triangle where lengths of the three of its
 sides are 5, 6 and 7.*/
@@ -22,8 +21,7 @@ function triangleArea (side1,side2,side3) {
     return area;
 };
 
-console.log("The triangle area is: ")
-console.log(triangleArea(5,6,7));
+console.log("The triangle area is: ", triangleArea(5,6,7))
 
 /*Write a JavaScript program to find the circumference and surface area of a circle whose
 radius is 4.*/
@@ -35,8 +33,7 @@ function circumferenceCircle (radius) {
     return circumference;
 };
 
-console.log("The circle circumference is: ")
-console.log(circumferenceCircle(4));
+console.log("The circle circumference is: ", circumferenceCircle(4))
 
 function surfaceArea ( radius) {
 
@@ -45,8 +42,7 @@ function surfaceArea ( radius) {
     return area;
 };
 
-console.log("The circle area is: ")
-console.log(surfaceArea(4));
+console.log("The circle area is: ",surfaceArea(4) );
 }
 
 document.querySelector("#btn2").onclick = function secondAssigment () {
@@ -86,13 +82,13 @@ document.querySelector("#btn3").onclick = function playOne () {
     
     let myOptions = ["rock", "paper", "scissors"];
     let playerSelection = function() {
-      return prompt("Pick between : Rock, Paper, Scissors").toLowerCase();
+      return prompt("Choose between : Rock, Paper, Scissors !").toLowerCase();
     };
      let computerSelection = function computerPlay() {
-      return myOptions[ Math.floor (Math.random() * myOptions.length)];
+      return myOptions[ Math.floor (Math.random() * myOptions.length )];
     };
    
-    //modal functions
+//modal functions
 function modalWin () {
     document.getElementById("modalWin").style.display = "block";
 }
@@ -120,12 +116,12 @@ function playRound(playerSelection, computerSelection) {
        
     if (playerSelection.toLowerCase() === "rock") {
         if (computerSelection === "rock") {
-          console.log( "It's a draw!  You both chose Rock!" );
+          console.log( "It's a tie game!  You both chose Rock!" );
           modalDraw();
           return;
         } else {
           if (computerSelection === "paper") {
-            console.log( "You lose!  Paper  beats Rock!" );
+            console.log( "You lost!  Paper  beats Rock!" );
             modalLose();
             return false;
           } else {
@@ -139,7 +135,7 @@ function playRound(playerSelection, computerSelection) {
     }
       if (playerSelection.toLowerCase() === "paper") {
         if (computerSelection === "paper") {
-          console.log( "It's a draw!  You both chose Paper!" );
+          console.log( "It's a tie game!  You both chose Paper!" );
           modalDraw();
           return;
         } else {
@@ -149,7 +145,7 @@ function playRound(playerSelection, computerSelection) {
             return true;
           } else {
             if (computerSelection === "scissors") {
-              console.log( "You lose!  Scissors beats Paper!" );
+              console.log( "You lost!  Scissors beats Paper!" );
               modalLose();
               return false;
             }
@@ -158,12 +154,12 @@ function playRound(playerSelection, computerSelection) {
       }
       if (playerSelection.toLowerCase() === "scissors") {
         if (computerSelection === "scissors") {
-          console.log( "It's a draw!  You both chose Scissors!" );
+          console.log( "It's a tie game!  You both chose Scissors!" );
           modalDraw();
           return;
         } else {
           if (computerSelection === "rock") {
-            console.log( "You lose!  Rock beats Scissors!" );
+            console.log( "You lost!  Rock beats Scissors!" );
             modalLose();
             return false;
           } else {
@@ -187,7 +183,7 @@ document.querySelector("#btn4").onclick = function playFive () {
 
     let myOptions = ["rock", "paper", "scissors"];
     let playerSelection = function() {
-      return prompt("Pick between : Rock, Paper, Scissors").toLowerCase();
+      return prompt("Choose between : Rock, Paper, Scissors!").toLowerCase();
     };
      let computerSelection = function computerPlay() {
       return myOptions[ Math.floor (Math.random() * myOptions.length)];
@@ -218,11 +214,11 @@ document.getElementById("close3").onclick = function closeModal () {
        
         if (playerSelection.toLowerCase() === "rock") {
           if (computerSelection === "rock") {
-            console.log( "It's a draw!  You both chose Rock!" );
+            console.log( "It's a tie game!  You both chose Rock!" );
             return;
           } else {
             if (computerSelection === "paper") {
-              console.log( "You lose!  Paper  beats Rock!" );
+              console.log( "You lost!  Paper  beats Rock!" );
               return false;
             } else {
               if (computerSelection === "scissors") {
@@ -234,7 +230,7 @@ document.getElementById("close3").onclick = function closeModal () {
         }
         if (playerSelection.toLowerCase() === "paper") {
           if (computerSelection === "paper") {
-            console.log( "It's a draw!  You both chose Paper!" );
+            console.log( "It's a tie game!  You both chose Paper!" );
             return;
           } else {
             if (computerSelection === "rock") {
@@ -242,7 +238,7 @@ document.getElementById("close3").onclick = function closeModal () {
               return true;
             } else {
               if (computerSelection === "scissors") {
-                console.log( "You lose!  Scissors beats Paper!" )
+                console.log( "You lost!  Scissors beats Paper!" )
                 return false;
               }
             }
@@ -250,11 +246,11 @@ document.getElementById("close3").onclick = function closeModal () {
         }
         if (playerSelection.toLowerCase() === "scissors") {
           if (computerSelection === "scissors") {
-            console.log( "It's a draw!  You both chose Scissors!" );
+            console.log( "It's a tie game!  You both chose Scissors!" );
             return;
           } else {
             if (computerSelection === "rock") {
-              console.log( "You lose!  Rock beats Scissors!" );
+              console.log( "You lost!  Rock beats Scissors!" );
               return false;
             } else {
               if (computerSelection === "paper") {
@@ -270,22 +266,22 @@ document.getElementById("close3").onclick = function closeModal () {
 At this point you should still just be using console.log() to display the results of each round and the winner at the end.*/
    function game() {
     
-      let playerWin = 0;
-      let computerWin = 0;
+      let playerScore = 0;
+      let computerScore = 0;
       let playRoundReturn = true;
     
       for (let i = 1; i <= 5 ; i++) {
         playRoundReturn = playRound(playerSelection(), computerSelection());
         if ( playRoundReturn === true ) {
-          playerWin++;
+          playerScore++;
         } else {
           if ( playRoundReturn === false ) {
-            computerWin++;
+            computerScore++;
           }
         }
      }
       
-      if( playerWin < computerWin) {
+      if( playerScore < computerScore) {
         console.log( "You lost! ");
         modalLose()
       } else {

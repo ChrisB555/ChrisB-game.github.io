@@ -1,5 +1,5 @@
 body {
-    background-color: whitesmoke;
+    background-image: linear-gradient(rgb(255,255,255), rgb(197, 218, 228),rgb(69, 100, 118));
 }
 
 h1, h4 {
@@ -18,7 +18,7 @@ h1, h4 {
     background-color: teal;
     color: white;
     font-size: 20px;
-    padding: 10px;
+    padding: 15px;
     margin-top: 50px ;
     border-radius: 20px;
     border: 2px solid teal;
@@ -38,8 +38,11 @@ h2 {
     padding: 15px;
     border-radius: 20px;
     border: 1px solid orange;
-    margin-top: 100px;
+    margin: 110px 0;
 }
+
+/*modal*/
+
 #modal {
     display: none;
 }
@@ -47,12 +50,12 @@ h3 {
     color: orange;
     font-weight: bolder;
     font-family: 26px;
-    margin-left: 50px;
+    margin-left: 150px;
 }
 .img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
